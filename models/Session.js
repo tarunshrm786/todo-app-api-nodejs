@@ -1,8 +1,22 @@
+// const mongoose = require('mongoose');
+// const SessionSchema = new mongoose.Schema({
+//   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
+//   loginTime: { type: Date, default: Date.now },
+//   logoutTime: { type: Date },
+//   ipAddress: { type: String },
+// });
+// module.exports = mongoose.model('Session', SessionSchema);
+
+
 const mongoose = require('mongoose');
-const SessionSchema = new mongoose.Schema({
+
+const sessionSchema = new mongoose.Schema({
   userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User', required: true },
   loginTime: { type: Date, default: Date.now },
   logoutTime: { type: Date },
-  ipAddress: { type: String },
+  ipAddress: { type: String }
 });
-module.exports = mongoose.model('Session', SessionSchema);
+
+const Session = mongoose.model('Session', sessionSchema);
+
+module.exports = Session;
